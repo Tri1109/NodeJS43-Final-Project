@@ -1,0 +1,1109 @@
+{
+	"info": {
+		"_postman_id": "ed93ed5a-cf9b-4708-80cc-3f7e452892cf",
+		"name": "Final Project NodeJS43",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36579204"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Karik\",\r\n    \"email\": \"karik@gmail.com\",\r\n    \"password\": \"812119\",\r\n    \"phone_number\": \"123456789\",\r\n    \"birth_date\": \"11/09/1996\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/auth/sign-up",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"thothanhtri1996@gmail.com\",\r\n  \"password\": \"812119\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/auth/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Upload room image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "roomImg",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/OneDrive/Desktop/room3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/room/upload/15",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room",
+								"upload",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all rooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/room",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rooms pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/room/pagination?pageIndex=1&pageSize=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room",
+								"pagination"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"room_name\": \"Normal room\",\r\n  \"guest_capacity\": 1,\r\n  \"bedrooms\": 1,\r\n  \"beds\": 0,\r\n  \"bathrooms\": 0,\r\n  \"description\": \"string\",\r\n  \"price\": 0,\r\n  \"washing_machine\": true,\r\n  \"iron\": true,\r\n  \"tv\": true,\r\n  \"air_conditioner\": true,\r\n  \"wifi\": true,\r\n  \"kitchen\": true,\r\n  \"parking\": true,\r\n  \"pool\": true,\r\n  \"location_id\": 4,\r\n  \"image\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/room",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete room",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGhvdGhhbmh0cmkxOTk2QGdtYWlsLmNvbSIsImlhdCI6MTcyNzcxMTgwOSwiZXhwIjoxNzI3NzI5ODA5fQ.mh8C5vkog2kklcEK2lCzVtaZemGeQjsbzE4EQAh1ewg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/room/delete-room/13",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room",
+								"delete-room",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get room by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/room/get-room/15",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room",
+								"get-room",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update room",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGhvdGhhbmh0cmkxOTk2QGdtYWlsLmNvbSIsImlhdCI6MTcyNzcxMTgwOSwiZXhwIjoxNzI3NzI5ODA5fQ.mh8C5vkog2kklcEK2lCzVtaZemGeQjsbzE4EQAh1ewg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"room_name\": \"Lux room\",\r\n  \"guest_capacity\": 0,\r\n  \"bedrooms\": 0,\r\n  \"beds\": 0,\r\n  \"bathrooms\": 0,\r\n  \"description\": \"string\",\r\n  \"price\": 0,\r\n  \"washing_machine\": true,\r\n  \"iron\": true,\r\n  \"tv\": true,\r\n  \"air_conditioner\": true,\r\n  \"wifi\": true,\r\n  \"kitchen\": true,\r\n  \"parking\": true,\r\n  \"pool\": true,\r\n  \"location_id\": 2,\r\n  \"image\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/room/update-room/9",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room",
+								"update-room",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get room by location ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/room/get-room-by-location/4",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"room",
+								"get-room-by-location",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGhvdGhhbmh0cmkxOTk2QGdtYWlsLmNvbSIsImlhdCI6MTcyODA0Mjg5NCwiZXhwIjoxNzI4MDYwODk0fQ.xIoCSY7jWgGKv1yP5RPUg5XEXIzFgjEV_3kB4pe_uQU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/user",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoia2FyaWtAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMDExLCJleHAiOjE3MjgwNjEwMTF9.mcDPsa4PEq1I20hZF85BCAVYGJ95KUxAXlj-FXDxdFI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/user/get-user/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"get-user",
+								"8"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoia2FyaWtAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMDExLCJleHAiOjE3MjgwNjEwMTF9.mcDPsa4PEq1I20hZF85BCAVYGJ95KUxAXlj-FXDxdFI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Karik1\",\r\n  \"email\": \"karik@gmail.com\",\r\n  \"password\": \"812119\",\r\n  \"phone_number\": \"123456789\",\r\n  \"birth_date\": \"11-09-1996\",\r\n  \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/user/update-user/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"update-user",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoia2FyaWtAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMDExLCJleHAiOjE3MjgwNjEwMTF9.mcDPsa4PEq1I20hZF85BCAVYGJ95KUxAXlj-FXDxdFI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/user/delete-user/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"delete-user",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search user by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoia2FyaWtAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMDExLCJleHAiOjE3MjgwNjEwMTF9.mcDPsa4PEq1I20hZF85BCAVYGJ95KUxAXlj-FXDxdFI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/user/search/karik",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"search",
+								"karik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users with pagination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoia2FyaWtAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMDExLCJleHAiOjE3MjgwNjEwMTF9.mcDPsa4PEq1I20hZF85BCAVYGJ95KUxAXlj-FXDxdFI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/user/pagination?pageIndex=2&pageSize=3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"pagination"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "2"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGhvdGhhbmh0cmkxOTk2QGdtYWlsLmNvbSIsImlhdCI6MTcyNzcxMTgwOSwiZXhwIjoxNzI3NzI5ODA5fQ.mh8C5vkog2kklcEK2lCzVtaZemGeQjsbzE4EQAh1ewg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Trí Thọ\",\r\n  \"email\": \"thothanhtri1109@gmail.com\",\r\n  \"password\": \"812119\",\r\n  \"phone_number\": \"123456789\",\r\n  \"birth_date\": \"11-9-1996\",\r\n  \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/user",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Get all location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/location",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location_name\": \"Quận Abc\",\r\n  \"city\": \"TP Hồ Chí Minh\",\r\n  \"country\": \"Việt Nam\",\r\n  \"image\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/location",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get location by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/location/get-location/15",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location",
+								"get-location",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGhvdGhhbmh0cmkxOTk2QGdtYWlsLmNvbSIsImlhdCI6MTcyNzcxMTgwOSwiZXhwIjoxNzI3NzI5ODA5fQ.mh8C5vkog2kklcEK2lCzVtaZemGeQjsbzE4EQAh1ewg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location_name\": \"Quận 1\",\r\n  \"city\": \"TP HCM\",\r\n  \"country\": \"Việt Nam\",\r\n  \"image\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/location/update-location/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location",
+								"update-location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/location/delete-location/15",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location",
+								"delete-location",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Locations pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/location/pagination?pageIndex=1&pageSize=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location",
+								"pagination"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload location image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "locationImg",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/OneDrive/Desktop/quan1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/location/upload/15",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"location",
+								"upload",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Get all comment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/comment",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": 2,\r\n  \"room_id\": 12,\r\n  \"content\": \"test 2\",\r\n  \"rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/comment",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/comment/get-comment/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"comment",
+								"get-comment",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"ok\",\r\n  \"rating\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/comment/update-comment/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"comment",
+								"update-comment",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/comment/delete-comment/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"comment",
+								"delete-comment",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment by room ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/comment/get-comment-by-room/12",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"comment",
+								"get-comment-by-room",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Get all booking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGhvdGhhbmh0cmkxOTk2QGdtYWlsLmNvbSIsImlhdCI6MTcyNzcwNjc3MiwiZXhwIjoxNzI3NzI0NzcyfQ.dwmofx1-Hmivz5KLjxfBnwzvKPQ4wAJhytGgHwEiuZA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/booking",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": 0,\r\n  \"room_id\": 12,\r\n  \"checkin_date\": \"2024-09-30T15:00:00Z\",\r\n  \"checkout_date\": \"2024-10-30T12:00:00Z\",\r\n  \"guest_count\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/booking",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get booking by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/booking/get-booking/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"booking",
+								"get-booking",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"room_id\": 12,\r\n  \"checkin_date\": \"2024-08-30T15:00:00Z\",\r\n  \"checkout_date\": \"2024-12-30T12:00:00Z\",\r\n  \"guest_count\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/booking/update-booking/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"booking",
+								"update-booking",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/booking/delete-booking/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"booking",
+								"delete-booking",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get booking by user ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoidGxpbmhAZ21haWwuY29tIiwiaWF0IjoxNzI4MDQzMzcyLCJleHAiOjE3MjgwNjEzNzJ9.GUOaHHiFgpqWn-GqMH7q6wbYxKw0nJ5fp2PAcqLa2Lk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/booking/get-booking-by-user/7",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"booking",
+								"get-booking-by-user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
