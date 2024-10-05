@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Booking {
+  booking_id    Int      @id @default(autoincrement())
+  room_id       Int
+  user_id       Int
+  checkin_date  DateTime @db.DateTime(0)
+  checkout_date DateTime @db.DateTime(0)
+  guest_count   Int?
+  Room          Room     @relation(fields: [room_id], references: [room_id], onDelete: NoAction, onUpdate: NoAction, map: "Booking_ibfk_1")
+  User          User     @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "Booking_ibfk_2")
+
+  @@index([room_id], map: "room_id")
+  @@index([user_id], map: "user_id")
+}
+
+model Comment {
+  comment_id   Int      @id @default(autoincrement())
+  user_id      Int
+  room_id      Int
+  comment_date DateTime @db.DateTime(0)
+  content      String?  @db.VarChar(1000)
+  rating       Int?
+  User         User     @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "Comment_ibfk_1")
+  Room         Room     @relation(fields: [room_id], references: [room_id], onDelete: NoAction, onUpdate: NoAction, map: "Comment_ibfk_2")
+
+  @@index([room_id], map: "room_id")
+  @@index([user_id], map: "user_id")
+}
+
+model Location {
+  location_id   Int     @id @default(autoincrement())
+  location_name String  @db.VarChar(255)
+  city          String  @db.VarChar(255)
+  country       String  @db.VarChar(255)
+  image         String? @db.VarChar(1000)
+  Room          Room[]
+}
+
+model Room {
+  room_id         Int       @id @default(autoincrement())
+  room_name       String    @db.VarChar(255)
+  guest_capacity  Int?
+  bedrooms        Int?
+  beds            Int?
+  bathrooms       Int?
+  description     String?   @db.VarChar(1000)
+  price           Int?
+  washing_machine Boolean?
+  iron            Boolean?
+  tv              Boolean?
+  air_conditioner Boolean?
+  wifi            Boolean?
+  kitchen         Boolean?
+  parking         Boolean?
+  pool            Boolean?
+  location_id     Int
+  image           String?   @db.VarChar(1000)
+  Booking         Booking[]
+  Comment         Comment[]
+  Location        Location  @relation(fields: [location_id], references: [location_id], onDelete: NoAction)
+
+  @@index([location_id], map: "location_id")
+}
+
+model User {
+  user_id      Int       @id @default(autoincrement())
+  name         String    @default("") @db.VarChar(255)
+  email        String    @unique(map: "email") @db.VarChar(255)
+  password     String    @db.VarChar(255)
+  phone_number String?   @db.VarChar(20)
+  birth_date   String?   @db.VarChar(20)
+  gender       String?   @db.VarChar(10)
+  role         String?   @db.VarChar(50)
+  Booking      Booking[]
+  Comment      Comment[]
+}
